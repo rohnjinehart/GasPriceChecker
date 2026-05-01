@@ -1,0 +1,278 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+#root {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+  min-width: 140px;
+}
+
+.field label {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.field input, .field select {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #e2e8f0;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.95rem;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+
+.field input:focus, .field select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.field select option { background: #1e293b; }
+
+.tab-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.15s;
+}
+
+.tab.active {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: #fff;
+}
+
+.btn {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.btn:hover { background: #2563eb; }
+.btn:disabled { background: #334155; color: #64748b; cursor: not-allowed; }
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid #334155;
+  color: #94a3b8;
+}
+
+.btn-ghost:hover { background: #1e293b; border-color: #475569; color: #e2e8f0; }
+
+.status {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+.status.ok { color: #22c55e; }
+.status.err { color: #ef4444; }
+
+/* Results */
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.results-count {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.fallback-banner {
+  background: #1c2a1e;
+  border: 1px solid #166534;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 0.82rem;
+  color: #86efac;
+  margin-bottom: 1rem;
+}
+
+.station-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.station-card {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  transition: border-color 0.15s;
+}
+
+.station-card:hover { border-color: #475569; }
+
+.station-card.best {
+  border-color: #22c55e;
+  background: #0a1a0f;
+}
+
+.rank {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #475569;
+  width: 2rem;
+  text-align: center;
+}
+
+.station-card.best .rank { color: #22c55e; }
+
+.station-info { min-width: 0; }
+
+.station-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #f1f5f9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.station-meta {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 0.15rem;
+}
+
+.station-prices {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.price-main {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.station-card.best .price-main { color: #22c55e; }
+
+.price-label {
+  font-size: 0.7rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.price-breakdown {
+  font-size: 0.75rem;
+  color: #475569;
+  margin-top: 0.2rem;
+}
+
+.savings-badge {
+  display: inline-block;
+  background: #14532d;
+  color: #86efac;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.1rem 0.5rem;
+  border-radius: 99px;
+  margin-top: 0.25rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #475569;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #334155;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.error-box {
+  background: #1a0a0a;
+  border: 1px solid #7f1d1d;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #fca5a5;
+  font-size: 0.9rem;
+}
